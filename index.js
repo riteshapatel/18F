@@ -21,7 +21,7 @@ var btn = document.querySelector(".add")
  * add button handler
  * @param {*} event 
  */
-function addHandler (event) {
+function handleAdd (event) {
     event.preventDefault() 
 
     // get dom elements
@@ -48,7 +48,7 @@ function addHandler (event) {
  * submit button handler
  * @param {*} event 
  */
-function submitHandler (event) {
+function handleSubmit (event) {
     event.preventDefault()
     submitForm(event)
 }
@@ -56,12 +56,12 @@ function submitHandler (event) {
 /**
  * click event listener for the add button
  */
-var addHandler = btn.addEventListener("click", addHandler)
+var addHandler = btn.addEventListener("click", handleAdd)
 
 /**
  * click handler for the submit button
  */
-var submitHandler = form.addEventListener('submit', submitHandler)
+var submitHandler = form.addEventListener('submit', handleSubmit)
 
 /**
  * helper function to set attributes on dynamic dom elements
@@ -219,7 +219,7 @@ function checkRelationship (rel) {
         alert('Relationship is a required field, please select a value')
     }
 
-    return rel.length > 0
+    return valid
 }
 
 /**
